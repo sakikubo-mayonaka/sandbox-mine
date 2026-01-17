@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ドキュメントテンプレート</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="sidebar">
+        <h2>目次</h2>
+        <ul>
+            <li><a href="#section1">セクション 1</a></li>
+            <li><a href="#section2">セクション 2</a></li>
+            <li><a href="#section3">セクション 3</a></li>
+            <li><a href="#section4">セクション 4</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <section id="section1">
+            <h1>セクション 1</h1>
+            <p>ここにコンテンツが入ります。サイドバーは固定されているため、スクロールしても動きません。</p>
+            <p>サイドバーを position: fixed; で固定し、メインコンテンツの左側に余白（margin-left）を作るのがポイントです。</p>
+        </section>
+
+        <section id="section2">
+            <h1>セクション 2</h1>
+            <p>長い文章を記述して、スクロールの挙動を確認してください。</p>
+            <div style="height: 500px;"></div> </section>
+
+        <section id="section3">
+            <h1>セクション 3</h1>
+            <div style="height: 500px;"></div>
+        </section>
+
+        <section id="section4">
+            <h1>セクション 4</h1>
+            <p>最後のリファレンスなど。</p>
+        </section>
+    </main>
+
+</body>
+</html>
