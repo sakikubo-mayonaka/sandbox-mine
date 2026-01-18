@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Document</title>
+  <!-- ✅ 相対パスで styles.css を含める -->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar" aria-label="目次">
+      <div class="sidebar__inner">
+        <div class="brand">
+          <div class="brand__title">Document</div>
+          <div class="brand__meta">Generated from Markdown</div>
+        </div>
+
+        <nav class="toc" aria-label="Table of contents">
+<a class="toc__item" href="#はじめに">はじめに</a>
+<a class="toc__item toc__item--sub" href="#目的">目的</a>
+<a class="toc__item" href="#セットアップ">セットアップ</a>
+<a class="toc__item toc__item--sub" href="#要件">要件</a>
+<a class="toc__item toc__item--sub" href="#手順">手順</a>
+<a class="toc__item" href="#使い方">使い方</a>
+<a class="toc__item toc__item--sub" href="#見出しを書くだけ">見出しを書くだけ</a>
+<a class="toc__item" href="#faq">FAQ</a>
+<a class="toc__item toc__item--sub" href="#q.-見出しidはどうなる？">Q. 見出しIDはどうなる？</a>
+<a class="toc__item toc__item--sub" href="#詳細">詳細</a>
+<a class="toc__item toc__item--sub toc__item--sub" href="#ソースファイルとディレクトリ構成">ソースファイルとディレクトリ構成</a>
+<a class="toc__item toc__item--sub toc__item--sub" href="#node.js-のインストール">Node.js のインストール</a>
+        </nav>
+
+        <div class="sidebar__footer">
+          <a href="#top" class="muted">▲ Top</a>
+        </div>
+      </div>
+    </aside>
+
+    <main id="top" class="content" aria-label="本文">
+      <article class="prose">
+<h1 id="はじめに" tabindex="-1">はじめに</h1>
+<p>このドキュメントは、左に固定サイドバー（目次）、右が本文スクロールです。</p>
+<h2 id="目的" tabindex="-1">目的</h2>
+<ul>
+<li>見出しから目次を自動生成</li>
+<li>生成HTMLに styles.css を相対パスで含める</li>
+</ul>
+<h1 id="セットアップ" tabindex="-1">セットアップ</h1>
+<h2 id="要件" tabindex="-1">要件</h2>
+<p>Node.js が入っていればOKです。</p>
+<h2 id="手順" tabindex="-1">手順</h2>
+<ol>
+<li><code>npm i</code></li>
+<li><code>npm run build</code></li>
+<li><code>dist/index.html</code> を開く</li>
+</ol>
+<p><code>dist/styles.css</code> は一つ上のディレクトリからコピーされる。</p>
+<h1 id="使い方" tabindex="-1">使い方</h1>
+<h2 id="見出しを書くだけ" tabindex="-1">見出しを書くだけ</h2>
+<p><code>#</code> / <code>##</code> / <code>###</code> を追加すると自動で目次に反映されます。</p>
+<h1 id="faq" tabindex="-1">FAQ</h1>
+<h2 id="q.-見出しidはどうなる？" tabindex="-1">Q. 見出しIDはどうなる？</h2>
+<p>自動でスラッグ化（例: 「セットアップ」→ <code>#セットアップ</code> のような形）されます。</p>
+<hr>
+<h2 id="詳細" tabindex="-1">詳細</h2>
+<h3 id="ソースファイルとディレクトリ構成" tabindex="-1">ソースファイルとディレクトリ構成</h3>
+<pre><code>my-docs/
+├─ document.md
+├─ styles.css
+├─ build.mjs
+├─ package.json
+└─ .vscode/
+   └─ settings.json   (任意: VSCodeプレビューにもCSSを当てる)
+</code></pre>
+<h3 id="node.js-のインストール" tabindex="-1">Node.js のインストール</h3>
+<p><a href="https://nodejs.org/en/download?utm_source=chatgpt.com">ここ</a> から LTS(推奨版)を入手。</p>
+<p>docker がなかったので、msl をダウンロードしてインストールした。</p>
+<p>インストール時に Add to PATH を必ず ON にしておく。</p>
+<p>VSCode を再起動する。</p>
+<p>VSCode のターミナルで以下を実行してバージョンが表示されればOK。</p>
+<pre><code>node -v
+npm -v
+</code></pre>
+
+      </article>
+    </main>
+  </div>
+</body>
+</html>

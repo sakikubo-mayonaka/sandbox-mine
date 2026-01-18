@@ -1,63 +1,68 @@
-<!-- =========================================================
-  document.md
-  - Markdown から HTML に変換してそのまま表示できる形式
-  - CSS は Markdown 内で参照する
-========================================================= -->
+# はじめに
 
-<link rel="stylesheet" href="./styles.css" />
+このドキュメントは、左に固定サイドバー（目次）、右が本文スクロールです。
 
-<div class="layout">
+## 目的
 
-<aside class="sidebar" aria-label="目次">
-  <div class="sidebar__inner">
-    <div class="brand">
-      <div class="brand__title">Document</div>
-      <div class="brand__meta">更新: 2026-01-17</div>
-    </div>
-    <nav class="toc" aria-label="Table of contents">
-      <a class="toc__item" href="#intro">はじめに</a>
-      <a class="toc__item" href="#setup">セットアップ</a>
-      <a class="toc__item toc__item--sub" href="#setup-req">要件</a>
-      <a class="toc__item toc__item--sub" href="#setup-install">インストール</a>
-      <a class="toc__item" href="#usage">使い方</a>
-      <a class="toc__item" href="#faq">FAQ</a>
-    </nav>
-    <div class="sidebar__footer">
-      <a href="#top" class="muted">▲ Top</a>
-    </div>
+- 見出しから目次を自動生成
+- 生成HTMLに styles.css を相対パスで含める
 
-  </div>
-</aside>
+# セットアップ
 
-<main id="top" class="content" aria-label="本文">
-  <article class="prose">
+## 要件
 
-# はじめに {#intro}
+Node.js が入っていればOKです。
 
-この Markdown は、**HTML と Markdown を混在**させています。  
-CSS は `<link>` タグで外部参照しています。
+## 手順
+
+1. `npm i`
+2. `npm run build`
+3. `dist/index.html` を開く
+
+`dist/styles.css` は一つ上のディレクトリからコピーされる。
+
+# 使い方
+
+## 見出しを書くだけ
+
+`#` / `##` / `###` を追加すると自動で目次に反映されます。
+
+# FAQ
+
+## Q. 見出しIDはどうなる？
+
+自動でスラッグ化（例: 「セットアップ」→ `#セットアップ` のような形）されます。
 
 ---
 
-## セットアップ {#setup}
+## 詳細
+### ソースファイルとディレクトリ構成
 
-### 要件 {#setup-req}
-
-- Markdown → HTML 変換環境（例: `marked`, `pandoc`, `remark` など）
-- Markdown 内の HTML を許可する設定
-
-### インストール {#setup-install}
-
-```bash
-npm i -D marked
+```
+my-docs/
+├─ document.md
+├─ styles.css
+├─ build.mjs
+├─ package.json
+└─ .vscode/
+   └─ settings.json   (任意: VSCodeプレビューにもCSSを当てる)
 ```
 
-## 重要な補足（互換性）
+### Node.js のインストール
 
-{#intro} のような 見出しID付与記法は Markdown エンジン依存です
+[ここ](https://nodejs.org/en/download?utm_source=chatgpt.com) から LTS(推奨版)を入手。
 
-- Pandoc: OK
-- Markdown-it: プラグイン次第
-- Marked: デフォルトは NG（JS で id を後付けするなど）
+docker がなかったので、msl をダウンロードしてインストールした。
 
-必要であれば、あなたの変換方法（例：marked / pandoc / remark / VSCode / GitHub Pages 等）に合わせて **「確実に動く Markdown 方言」**に調整したテンプレも作れます。
+インストール時に Add to PATH を必ず ON にしておく。
+
+VSCode を再起動する。
+
+VSCode のターミナルで以下を実行してバージョンが表示されればOK。
+
+```
+node -v
+npm -v
+```
+
+
