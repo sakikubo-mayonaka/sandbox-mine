@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Document</title>
-  <!-- ✅ 相対パスで styles.css を含める -->
+  <title>サイドバー固定のテンプレート(CHP)</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -12,55 +11,58 @@
     <aside class="sidebar" aria-label="目次">
       <div class="sidebar__inner">
         <div class="brand">
-          <div class="brand__title">Document</div>
+          <div class="brand__title">サイドバー固定のテンプレート(CHP)</div>
           <div class="brand__meta">Generated from Markdown</div>
         </div>
 
         <nav class="toc" aria-label="Table of contents">
-<a class="toc__item" href="#はじめに">はじめに</a>
-<a class="toc__item toc__item--sub" href="#目的">目的</a>
-<a class="toc__item" href="#セットアップ">セットアップ</a>
-<a class="toc__item toc__item--sub" href="#要件">要件</a>
-<a class="toc__item toc__item--sub" href="#手順">手順</a>
-<a class="toc__item" href="#使い方">使い方</a>
-<a class="toc__item toc__item--sub" href="#見出しを書くだけ">見出しを書くだけ</a>
-<a class="toc__item" href="#faq">FAQ</a>
-<a class="toc__item toc__item--sub" href="#q.-見出しidはどうなる？">Q. 見出しIDはどうなる？</a>
+<a class="toc__item" href="#サイドバー固定のテンプレート(chp)">サイドバー固定のテンプレート(CHP)</a>
+<a class="toc__item toc__item--sub" href="#はじめに">はじめに</a>
+<a class="toc__item toc__item--sub toc__item--sub" href="#目的">目的</a>
+<a class="toc__item toc__item--sub" href="#セットアップ">セットアップ</a>
+<a class="toc__item toc__item--sub toc__item--sub" href="#要件">要件</a>
+<a class="toc__item toc__item--sub toc__item--sub" href="#手順">手順</a>
+<a class="toc__item toc__item--sub" href="#使い方">使い方</a>
+<a class="toc__item toc__item--sub toc__item--sub" href="#見出しを書くだけ">見出しを書くだけ</a>
+<a class="toc__item toc__item--sub" href="#faq">FAQ</a>
+<a class="toc__item toc__item--sub toc__item--sub" href="#q.-見出しidはどうなる？">Q. 見出しIDはどうなる？</a>
 <a class="toc__item toc__item--sub" href="#詳細">詳細</a>
 <a class="toc__item toc__item--sub toc__item--sub" href="#ソースファイルとディレクトリ構成">ソースファイルとディレクトリ構成</a>
 <a class="toc__item toc__item--sub toc__item--sub" href="#node.js-のインストール">Node.js のインストール</a>
+<a class="toc__item toc__item--sub" href="#スタイル">スタイル</a>
         </nav>
 
         <div class="sidebar__footer">
-          <a href="#top" class="muted">▲ Top</a>
+          <a href="#サイドバー固定のテンプレート(chp)" class="muted">▲ Top</a>
         </div>
       </div>
     </aside>
 
     <main id="top" class="content" aria-label="本文">
       <article class="prose">
-<h1 id="はじめに" tabindex="-1">はじめに</h1>
+<h1 id="サイドバー固定のテンプレート(chp)" tabindex="-1">サイドバー固定のテンプレート(CHP)</h1>
+<h2 id="はじめに" tabindex="-1">はじめに</h2>
 <p>このドキュメントは、左に固定サイドバー（目次）、右が本文スクロールです。</p>
-<h2 id="目的" tabindex="-1">目的</h2>
+<h3 id="目的" tabindex="-1">目的</h3>
 <ul>
 <li>見出しから目次を自動生成</li>
 <li>生成HTMLに styles.css を相対パスで含める</li>
 </ul>
-<h1 id="セットアップ" tabindex="-1">セットアップ</h1>
-<h2 id="要件" tabindex="-1">要件</h2>
+<h2 id="セットアップ" tabindex="-1">セットアップ</h2>
+<h3 id="要件" tabindex="-1">要件</h3>
 <p>Node.js が入っていればOKです。</p>
-<h2 id="手順" tabindex="-1">手順</h2>
+<h3 id="手順" tabindex="-1">手順</h3>
 <ol>
 <li><code>npm i</code></li>
 <li><code>npm run build</code></li>
 <li><code>dist/index.html</code> を開く</li>
 </ol>
 <p><code>dist/styles.css</code> は一つ上のディレクトリからコピーされる。</p>
-<h1 id="使い方" tabindex="-1">使い方</h1>
-<h2 id="見出しを書くだけ" tabindex="-1">見出しを書くだけ</h2>
+<h2 id="使い方" tabindex="-1">使い方</h2>
+<h3 id="見出しを書くだけ" tabindex="-1">見出しを書くだけ</h3>
 <p><code>#</code> / <code>##</code> / <code>###</code> を追加すると自動で目次に反映されます。</p>
-<h1 id="faq" tabindex="-1">FAQ</h1>
-<h2 id="q.-見出しidはどうなる？" tabindex="-1">Q. 見出しIDはどうなる？</h2>
+<h2 id="faq" tabindex="-1">FAQ</h2>
+<h3 id="q.-見出しidはどうなる？" tabindex="-1">Q. 見出しIDはどうなる？</h3>
 <p>自動でスラッグ化（例: 「セットアップ」→ <code>#セットアップ</code> のような形）されます。</p>
 <hr>
 <h2 id="詳細" tabindex="-1">詳細</h2>
@@ -74,14 +76,687 @@
    └─ settings.json   (任意: VSCodeプレビューにもCSSを当てる)
 </code></pre>
 <h3 id="node.js-のインストール" tabindex="-1">Node.js のインストール</h3>
-<p><a href="https://nodejs.org/en/download?utm_source=chatgpt.com">ここ</a> から LTS(推奨版)を入手。</p>
-<p>docker がなかったので、msl をダウンロードしてインストールした。</p>
-<p>インストール時に Add to PATH を必ず ON にしておく。</p>
-<p>VSCode を再起動する。</p>
-<p>VSCode のターミナルで以下を実行してバージョンが表示されればOK。</p>
+<ol>
+<li><a href="https://nodejs.org/en/download?utm_source=chatgpt.com">ここ</a> から LTS(推奨版)を入手。<br>
+docker がなかったので、msl をダウンロードしてインストールした。</li>
+<li>インストール時に Add to PATH を必ず ON にしておく。</li>
+<li>VSCode を再起動する。</li>
+<li>VSCode のターミナルで以下を実行してバージョンが表示されればOK。</li>
+</ol>
 <pre><code>node -v
 npm -v
 </code></pre>
+<h2 id="スタイル" tabindex="-1">スタイル</h2>
+<pre><code>&lt;body&gt;------------------------------- // height=100%, margin=0, font-family, color(文字色), background
+  &lt;div class=&quot;layout&quot;&gt;--------------- // height=画面全体、grid 配置, 中は2列(左は幅固定)
+
+    // 1列目 (aside==余談)　サイドバー領域
+    &lt;aside  class=&quot;sidebar&gt;---------- // 右境界の色、中の余白(padding)=18px、背景
+
+      // サイドバー本体。余白分 aside=sidebar より小さくなる
+      &lt;div class=&quot;siderbar__inner&quot;&gt;-- // 中は3行(brand,toc,footer)。item は幅いっぱい使う。
+                                      // 垂直位置(top)=18px, 高さ=100vh-36px(つまり下も18px空く)
+                                      // gap=14px(brandとtoc, tocとfooterの間)
+                                      // スクロールさせない
+
+        // 1行目 brand
+        &lt;div class=&quot;brand&quot;&gt;-----------// border-radius(領域の角を丸くする),padding,boarder,background
+          &lt;div class=&quot;brand__title&quot;&gt;  // font-weight, letter-spacing
+          &lt;div class=&quot;brand__meta&quot;&gt;   // margin, color, font-size
+        &lt;/div&gt;------------------------// brand 終わり
+
+        // 2行目 目次 (toc by nav)
+        &lt;nav class=&quot;toc&quot;&gt;-------------// border-radius(領域の角を丸くする),padding,boarder,background
+                                      // オーバーフローしたらスクロール(overflow:auto)
+          &lt;a class=&quot;toc__item&quot; href=&quot;#...&quot;&gt;
+          // padding=10px,line-height=12,overflow=hidden
+          // toc__item:hover(ポインタが乗った場合の挙動)
+          &lt;a class=&quot;toc__item toc__item--sub&quot; href=&quot;#...&quot;&gt;
+          // toc__item 適用後、padding=22px, color=mutec
+        &lt;/nav&gt;-------------------------// 目次終わり
+
+        // 3行目 footer
+        &lt;div class=&quot;sidebar__footer&quot;&gt;--// padding, border, border-radius, background
+          &lt;a href=&quot;#top&quot; class=&quot;muted&quot;&gt;
+        &lt;/div&gt;-------------------------// footer 就労
+
+       &lt;/div&gt;
+    &lt;/aside&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<hr>
+<h4 id="body" tabindex="-1">body</h4>
+<pre><code>&lt;body&gt;
+  &lt;div class=&quot;layout&quot;&gt; ... &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:left">設定値</th>
+<th style="text-align:left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">height</td>
+<td style="text-align:left">100%</td>
+<td style="text-align:left">高さは画面いっぱい</td>
+</tr>
+<tr>
+<td style="text-align:center">margin</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">外側の余白なし</td>
+</tr>
+<tr>
+<td style="text-align:center">font-family</td>
+<td style="text-align:left"><code>var(--font)</code></td>
+<td style="text-align:left">文書全体のフォントファミリーの設定</td>
+</tr>
+<tr>
+<td style="text-align:center">color</td>
+<td style="text-align:left"><code>var(--text)</code></td>
+<td style="text-align:left">文書本体の文字の色のデフォルト</td>
+</tr>
+<tr>
+<td style="text-align:center">background</td>
+<td style="text-align:left"><code>radial-gradient(), radial-gradient(), var(--bg)</code></td>
+<td style="text-align:left">背景</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>radial-gradient は二つ以上の色の連続的な推移が原点から放射状に広がる画像を生成する。
+<ul>
+<li>中心の位置：省略時は center</li>
+<li>図形：circle, ellipse(楕円)</li>
+<li>大きさ</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="div-class=layout" tabindex="-1">div class=layout</h4>
+<pre><code>&lt;body&gt;
+  &lt;div class=&quot;layout&quot;&gt; 
+    &lt;aside class=&quot;sidebar&quot; aria-label=&quot;目次&quot;&gt; ... &lt;/aside&gt;
+    &lt;main id=&quot;top&quot; class=&quot;content&quot; aria-label=&quot;本文&quot;&gt; ... &lt;/main&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<p>class layout</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:left">設定値</th>
+<th style="text-align:left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">height</td>
+<td style="text-align:left">100vh</td>
+<td style="text-align:left">vh は view port の 1% が単位。100 ということはウィンドウ全体の高さ</td>
+</tr>
+<tr>
+<td style="text-align:center">display</td>
+<td style="text-align:left">grid</td>
+<td style="text-align:left">グリッド上に置く</td>
+</tr>
+<tr>
+<td style="text-align:center">grid-template-columns</td>
+<td style="text-align:left"><code>var(--sidebar-w) 1fr</code></td>
+<td style="text-align:left">グリッド列。サイドバーは <code>--sidebar-w</code> の値固定。残りはフレックス</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>View port とはコンピュータの画面で見えているウィンドウの範囲</li>
+</ul>
+<hr>
+<h4 id="aside-class=sidebar" tabindex="-1">aside class=sidebar</h4>
+<pre><code>  &lt;div class=&quot;layout&quot;&gt;
+    &lt;aside class=&quot;sidebar&quot; aria-label=&quot;目次&quot;&gt;
+      &lt;div class=&quot;sidebar__inner&quot;&gt; ... &lt;/div&gt;
+    &lt;/aside&gt;
+    &lt;main id=&quot;top&quot; class=&quot;content&quot; aria-label=&quot;本文&quot;&gt; ... &lt;/main&gt;
+  &lt;/div&gt;
+</code></pre>
+<p>class sidebar</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:left">設定値</th>
+<th style="text-align:left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">border-right</td>
+<td style="text-align:left">1px sold <code>var(--border)</code></td>
+<td style="text-align:left">サイドバーの右側の線</td>
+</tr>
+<tr>
+<td style="text-align:center">background</td>
+<td style="text-align:left"><code>rgba(,,,)</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">backdrop-filter</td>
+<td style="text-align:left"><code>blur(10px)</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">padding</td>
+<td style="text-align:left">18px</td>
+<td style="text-align:left">内部の余白</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4 id="div-class=sidebar__inner" tabindex="-1">div class=sidebar__inner</h4>
+<pre><code>    &lt;aside class=&quot;sidebar&quot; aria-label=&quot;目次&quot;&gt;
+      &lt;div class=&quot;sidebar__inner&quot;&gt;
+        &lt;div class=&quot;brand&quot;&gt; ... &lt;/div&gt;
+        &lt;nav class=&quot;toc&quot; aria-label=&quot;Table of contents&quot;&gt; ... &lt;/nav&gt;
+        &lt;div class=&quot;sidebar__footer&quot;&gt; ... &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/aside&gt;
+</code></pre>
+<p>class sidebar__inner</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:left">設定値</th>
+<th style="text-align:left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">position</td>
+<td style="text-align:left">sticky</td>
+<td style="text-align:left">見える範囲に固定</td>
+</tr>
+<tr>
+<td style="text-align:center">top</td>
+<td style="text-align:left">18px</td>
+<td style="text-align:left">垂直位置</td>
+</tr>
+<tr>
+<td style="text-align:center">height</td>
+<td style="text-align:left"><code>calc(100vh - 36px)</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">display</td>
+<td style="text-align:left">grid</td>
+<td style="text-align:left">グリッド上に置かれる</td>
+</tr>
+<tr>
+<td style="text-align:center">grid-template-rows</td>
+<td style="text-align:left">auto 1fr auto</td>
+<td style="text-align:left">中は3列。brand, item, footer</td>
+</tr>
+<tr>
+<td style="text-align:center">gap</td>
+<td style="text-align:left">14px</td>
+<td style="text-align:left">行と列の間のすき間</td>
+</tr>
+<tr>
+<td style="text-align:center">overflow</td>
+<td style="text-align:left">hidden</td>
+<td style="text-align:left">サイドバー自体をスクロールさせない</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4 id="div-class=brand,-class=brand__title,-class=brand__meta" tabindex="-1">div class=brand, class=brand__title, class=brand__meta</h4>
+<pre><code>      &lt;div class=&quot;sidebar__inner&quot;&gt;
+        &lt;div class=&quot;brand&quot;&gt;
+          &lt;div class=&quot;brand__title&quot;&gt;Document&lt;/div&gt;
+          &lt;div class=&quot;brand__meta&quot;&gt;Generated from Markdown&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+</code></pre>
+<p>class brand</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:left">設定値</th>
+<th style="text-align:left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">padding</td>
+<td style="text-align:left">14px 14px 10px</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">border</td>
+<td style="text-align:left">1px solid <code>var(--border)</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">border-radius</td>
+<td style="text-align:left"><code>var(--radius)</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">background</td>
+<td style="text-align:left"><code>rgba(255,255,255,.03)</code></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<p>class brand__title</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:left">設定値</th>
+<th style="text-align:left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">font-weight</td>
+<td style="text-align:left">700</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">letter-spacing</td>
+<td style="text-align:left">.2px</td>
+<td style="text-align:left">文字間のスペース</td>
+</tr>
+</tbody>
+</table>
+<p>class brand__meta</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:left">設定値</th>
+<th style="text-align:left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">margin-top</td>
+<td style="text-align:left">6px</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">color</td>
+<td style="text-align:left"><code>var(--muted)</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">font-size</td>
+<td style="text-align:left">12px</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4 id="nav-class=toc" tabindex="-1">nav class=toc</h4>
+<pre><code>      &lt;div class=&quot;sidebar__inner&quot;&gt;
+        &lt;nav class=&quot;toc&quot; aria-label=&quot;Table of contents&quot;&gt; 
+          // 自動生成された目次がここに書き出される
+          &lt;a class=&quot;toc__item${subClass}&quot; href=&quot;#id&quot;&gt; ... &lt;/a&gt;
+          ........
+        &lt;/nav&gt;
+      &lt;/div&gt;
+</code></pre>
+<p>class toc</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:left">設定値</th>
+<th style="text-align:left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">padding</td>
+<td style="text-align:left">10px</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">border</td>
+<td style="text-align:left">1px solid <code>var(--border)</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">border-radius</td>
+<td style="text-align:left"><code>var(--radius)</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">background</td>
+<td style="text-align:left"><code>rgba()</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">overflow</td>
+<td style="text-align:left">hidden</td>
+<td style="text-align:left">スクロールさせない</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4 id="a-class=toc__item" tabindex="-1">a class=toc__item</h4>
+<p>class toc__item</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:left">設定値</th>
+<th style="text-align:left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">display</td>
+<td style="text-align:left">block</td>
+<td style="text-align:left">ブロックボックスとなる。ボックスの前後で改行が入る</td>
+</tr>
+<tr>
+<td style="text-align:center">padding</td>
+<td style="text-align:left">10px</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">border-radius</td>
+<td style="text-align:left">10px</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">color</td>
+<td style="text-align:left"><code>var(--text)</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">text-decoration</td>
+<td style="text-align:left">none</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">line-height</td>
+<td style="text-align:left">1.2</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">white-space</td>
+<td style="text-align:left">nowrap</td>
+<td style="text-align:left">空白文字で折り返さない</td>
+</tr>
+<tr>
+<td style="text-align:center">overflow</td>
+<td style="text-align:left">hidden</td>
+<td style="text-align:left">あふれた部分は表示しない</td>
+</tr>
+<tr>
+<td style="text-align:center">text-overflow</td>
+<td style="text-align:left">ellipsis</td>
+<td style="text-align:left">テキストがあふれたときは … と表示</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>text-overflow を使う場面にするには、overflow hidden であふれされること。
+<ul>
+<li>clip(あふれたテキストは切り取る), ellipsis(あふれた分は…と表記)</li>
+</ul>
+</li>
+</ul>
+<p>class toc__item:hover</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:left">設定値</th>
+<th style="text-align:left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">background</td>
+<td style="text-align:left"><code>rgba(130,180,255,.14)</code></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<p>class toc__item–sub</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:left">設定値</th>
+<th style="text-align:left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">padding-left</td>
+<td style="text-align:left">22px</td>
+<td style="text-align:left">左側の余白</td>
+</tr>
+<tr>
+<td style="text-align:center">color</td>
+<td style="text-align:left"><code>var(--muted)</code></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="div-class=sidebar__footer" tabindex="-1">div class=sidebar__footer</h4>
+<pre><code>      &lt;div class=&quot;sidebar__inner&quot;&gt;
+        &lt;div class=&quot;sidebar__footer&quot;&gt; 
+          &lt;a href=&quot;#top&quot; class=&quot;muted&quot;&gt;▲ Top&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+</code></pre>
+<p>class slidebar__footer</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:left">設定値</th>
+<th style="text-align:left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">padding</td>
+<td style="text-align:left">10px 12px</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">border</td>
+<td style="text-align:left">1px solid <code>var(--border)</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">border-radius</td>
+<td style="text-align:left"><code>var(--radius)</code></td>
+<td style="text-align:left">角の丸み</td>
+</tr>
+<tr>
+<td style="text-align:center">background</td>
+<td style="text-align:left"><code>rgba(,,,)</code></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4 id="main-class=content" tabindex="-1">main class=content</h4>
+<pre><code>  &lt;div class=&quot;layout&quot;&gt;
+    &lt;aside class=&quot;sidebar&quot; aria-label=&quot;目次&quot;&gt; ... &lt;/aside&gt;
+    &lt;main id=&quot;top&quot; class=&quot;content&quot; aria-label=&quot;本文&quot;&gt; 
+      &lt;article class=&quot;prose&quot;&gt;
+${bodyHtml}
+      &lt;/article&gt;
+    &lt;/main&gt;
+  &lt;/div&gt;
+</code></pre>
+<p>class content</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:left">設定値</th>
+<th style="text-align:left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">overflow</td>
+<td style="text-align:left">auto</td>
+<td style="text-align:left">本文はスクロールする</td>
+</tr>
+<tr>
+<td style="text-align:center">padding</td>
+<td style="text-align:left">28px <code>var(--gutter)</code></td>
+<td style="text-align:left">内側の余白。上下と左右</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>overflow: visible(あふれたものはそのまま表示), hidden(あふれたものは見えない), scroll(スクロールバー使用), auto(あふれたときのみスクロールバー)</li>
+</ul>
+<hr>
+<h4 id="article-class=prose" tabindex="-1">article class=prose</h4>
+<pre><code>    &lt;main id=&quot;top&quot; class=&quot;content&quot; aria-label=&quot;本文&quot;&gt; 
+      &lt;article class=&quot;prose&quot;&gt;
+${bodyHtml}
+      &lt;/article&gt;
+    &lt;/main&gt;
+</code></pre>
+<p>class prose</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:left">設定値</th>
+<th style="text-align:left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">max-width</td>
+<td style="text-align:left"><code>var(--maxw)</code></td>
+<td style="text-align:left">ボックスの最大幅</td>
+</tr>
+<tr>
+<td style="text-align:center">margin</td>
+<td style="text-align:left">0 auto</td>
+<td style="text-align:left">他とのすき間。二つの場合は上下と左右。auto はブラウザが自動設定</td>
+</tr>
+<tr>
+<td style="text-align:center">padding</td>
+<td style="text-align:left">22px</td>
+<td style="text-align:left">内側の余白</td>
+</tr>
+<tr>
+<td style="text-align:center">border</td>
+<td style="text-align:left">1px solid <code>var(--border)</code></td>
+<td style="text-align:left">境界の幅、スタイル（実線）、色を指定。</td>
+</tr>
+<tr>
+<td style="text-align:center">border-radius</td>
+<td style="text-align:left"><code>var(--radius)</code></td>
+<td style="text-align:left">枠の角の丸み（半径）を指定。上左、上右、下右、下左、の順。一つなら四隅</td>
+</tr>
+<tr>
+<td style="text-align:center">background</td>
+<td style="text-align:left"><code>rgba(,,,)</code></td>
+<td style="text-align:left">背景の色</td>
+</tr>
+<tr>
+<td style="text-align:center">backdrop-filter</td>
+<td style="text-align:left"><code>blur(8px)</code></td>
+<td style="text-align:left">要素の背後にグラフィックス効果を適用する。article の後ろに何かがあったらぼかして表示させる。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>border-style の値：none, hidden, dotted(丸の破線), dashed(四角の破線), solid, double(二重線), groove(溝のような線), ridge(盛り上がった線), inset(要素が埋め込まれて見える線), outset(要素が出っ張って見える線)</li>
+</ul>
+<hr>
+<h4 id="typography" tabindex="-1">typography</h4>
+<p>prose の中の h1, h2, h3</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:left">prose h1</th>
+<th style="text-align:left">prose h2</th>
+<th style="text-align:left">prose h3</th>
+<th style="text-align:left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">scroll-margin-top</td>
+<td style="text-align:left">18px</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">スクロールスナップ領域の上側のマージン</td>
+</tr>
+<tr>
+<td style="text-align:center">font-size</td>
+<td style="text-align:left">30px</td>
+<td style="text-align:left">22px</td>
+<td style="text-align:left">18px</td>
+<td style="text-align:left">フォントのサイズをピクセル値で指定</td>
+</tr>
+<tr>
+<td style="text-align:center">margin</td>
+<td style="text-align:left">0 0 18ps</td>
+<td style="text-align:left">20px 0 12px</td>
+<td style="text-align:left">18px 0 8px</td>
+<td style="text-align:left">上、左右、下の間隔。h1 は下を大きく開ける。</td>
+</tr>
+</tbody>
+</table>
+<p>pose の中の p, li</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:left">設定値</th>
+<th style="text-align:left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">line-height</td>
+<td style="text-align:left">1.75</td>
+<td style="text-align:left">行ボックスの高さ。この場合 font-size の 1.75倍</td>
+</tr>
+<tr>
+<td style="text-align:center">color</td>
+<td style="text-align:left"><code>rgba()</code></td>
+<td style="text-align:left">テキストの色の指定。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>line-height のデフォルトは normal。これはフォントの約 1.2 倍。単位なしの数値はフォントサイズのその数値を掛けたもの。単位ありはその数値が高さ。パーセントはフォントサイズにその値を掛けたものになるが、予期しない結果を生む可能性がある。</li>
+<li>rgba は古いらしい。最新のは <code>rgp(A B C [/ D])</code>。コンマは要らないし、最後の透明度は <code>/</code> の後。
+<ul>
+<li>例：<code>rgb(198 85 218 / 0.25)</code></li>
+</ul>
+</li>
+</ul>
+<p>pose の中の a (<code>color: var(--link);</code>)</p>
+<p>pose の中の pre, code : 省略</p>
 
       </article>
     </main>

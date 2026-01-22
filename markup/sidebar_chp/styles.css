@@ -66,7 +66,8 @@ body{
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: rgba(255,255,255,.02);
-  overflow: hidden;              /* ここもスクロールさせない */
+  overflow: auto;
+/*  overflow: hidden;   */           /* ここもスクロールさせない */
 }
 
 .toc__item{
@@ -158,6 +159,6 @@ body{
   }
   .toc{
     /* モバイルでは目次が長いと困るので、ここだけスクロール許可したい場合は下のコメント解除 */
-    /* overflow: auto; max-height: 200px; */
+    overflow: auto; max-height: 200px;
   }
 }

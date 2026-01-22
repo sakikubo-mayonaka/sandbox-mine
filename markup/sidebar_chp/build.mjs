@@ -40,7 +40,7 @@ md.use(anchor, {
   callback: (token, { slug, title }) => {
     // token.tag は h1/h2/h3...
     const level = Number(token.tag.slice(1));
-    // 目次に入れるレベルは好みで調整（ここでは h1〜h3）
+    // 目次に入れるレベルは好みで調整
     if (level >= 1 && level <= 3) {
       headings.push({ level, title, id: slug });
     }
@@ -50,6 +50,12 @@ md.use(anchor, {
 // ---- Markdown読み込み＆HTML化 ----
 const mdText = fs.readFileSync(INPUT_MD, "utf8");
 const bodyHtml = md.render(mdText);
+
+// ---- 最初のレベル1見出しをドキュメントタイトルにする
+const firstH1 = headings.find(h => h.level === 1);
+const docTitle = (firstH1?.title?.trim() || "Document");
+// ---- 「Top」リンクは最初のH1へ飛ばす（なければ #top）
+const topHref = firstH1?.id ? `#${firstH1.id}` : "#top";
 
 // ---- 目次HTML生成（フラットに並べてCSSでインデント）----
 const tocHtml = headings
@@ -67,8 +73,7 @@ const fullHtml = `<!doctype html>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Document</title>
-  <!-- ✅ 相対パスで styles.css を含める -->
+  <title>${escapeHtml(docTitle)}</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -76,7 +81,7 @@ const fullHtml = `<!doctype html>
     <aside class="sidebar" aria-label="目次">
       <div class="sidebar__inner">
         <div class="brand">
-          <div class="brand__title">Document</div>
+          <div class="brand__title">${escapeHtml(docTitle)}</div>
           <div class="brand__meta">Generated from Markdown</div>
         </div>
 
@@ -85,7 +90,7 @@ ${tocHtml || `<div class="muted">見出しがありません</div>`}
         </nav>
 
         <div class="sidebar__footer">
-          <a href="#top" class="muted">▲ Top</a>
+          <a href="${topHref}" class="muted">▲ Top</a>
         </div>
       </div>
     </aside>
