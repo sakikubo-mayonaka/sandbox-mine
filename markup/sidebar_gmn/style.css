@@ -1,0 +1,65 @@
+/* 基本設定 */
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* サイドバーのスタイル */
+.sidebar {
+    position: fixed;    /* 画面に固定 */
+    top: 0;
+    left: 0;
+    width: 250px;       /* サイドバーの幅 */
+    height: 100vh;      /* 画面いっぱいの高さ */
+    background-color: #f8f9fa;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    overflow-y: auto;   /* 目次が長い場合のみサイドバー内だけでスクロール */
+}
+
+.sidebar h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+/* メインコンテンツのスタイル */
+.content {
+    margin-left: 290px; /* サイドバーの幅 + 余白 */
+    padding: 40px;
+    max-width: 800px;   /* 読みやすい幅に制限 */
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+/* レスポンシブ対応：画面が狭いときはサイドバーを非表示にするか調整が必要 */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* 簡易的に非表示 */
+    }
+    .content {
+        margin-left: 0;
+    }
+}

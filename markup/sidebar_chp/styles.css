@@ -1,0 +1,164 @@
+:root{
+  --bg: #0b0d10;
+  --panel: #12151b;
+  --text: #e7eaf0;
+  --muted: #a9b0bd;
+  --border: rgba(255,255,255,.08);
+  --link: #8ab4ff;
+
+  --sidebar-w: 280px;
+  --gutter: 24px;
+  --radius: 14px;
+  --maxw: 980px;
+
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Noto Sans Mono", monospace;
+}
+
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 20% 10%, rgba(138,180,255,.12), transparent 60%),
+              radial-gradient(900px 600px at 80% 0%, rgba(255,255,255,.06), transparent 55%),
+              var(--bg);
+}
+
+/* 2カラムレイアウト */
+.layout{
+  height: 100vh;                 /* 画面高固定 */
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+}
+
+/* サイドバー（スクロールしない） */
+.sidebar{
+  border-right: 1px solid var(--border);
+  background: rgba(18,21,27,.72);
+  backdrop-filter: blur(10px);
+  padding: 18px;
+}
+
+.sidebar__inner{
+  position: sticky;              /* 見える範囲に固定 */
+  top: 18px;
+  height: calc(100vh - 36px);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 14px;
+
+  overflow: hidden;              /* サイドバー自体をスクロールさせない */
+}
+
+.brand{
+  padding: 14px 14px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.03);
+}
+.brand__title{ font-weight: 700; letter-spacing: .2px; }
+.brand__meta{ margin-top: 6px; color: var(--muted); font-size: 12px; }
+
+.toc{
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.02);
+  overflow: auto;
+/*  overflow: hidden;   */           /* ここもスクロールさせない */
+}
+
+.toc__item{
+  display: block;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: var(--text);
+  text-decoration: none;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.toc__item:hover{ background: rgba(138,180,255,.14); }
+.toc__item--sub{ padding-left: 22px; color: var(--muted); }
+
+.sidebar__footer{
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.02);
+}
+
+/* 本文側（ここだけスクロール） */
+.content{
+  overflow: auto;                /* 本文だけスクロール */
+  padding: 28px var(--gutter);
+}
+
+.prose{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(18,21,27,.55);
+  backdrop-filter: blur(8px);
+}
+
+/* タイポ */
+.prose h1, .prose h2, .prose h3{
+  scroll-margin-top: 18px;
+}
+.prose h1{ font-size: 30px; margin: 0 0 18px; }
+.prose h2{ font-size: 22px; margin: 28px 0 12px; }
+.prose h3{ font-size: 18px; margin: 18px 0 8px; }
+
+.prose p, .prose li{
+  line-height: 1.75;
+  color: rgba(231,234,240,.92);
+}
+
+.prose a{ color: var(--link); }
+.prose code{
+  font-family: var(--mono);
+  font-size: .95em;
+  padding: 2px 6px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255,255,255,.04);
+}
+.prose pre{
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(0,0,0,.25);
+  overflow: auto;
+}
+.prose pre code{
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+/* モバイル */
+@media (max-width: 900px){
+  .layout{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .sidebar{
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .sidebar__inner{
+    position: relative;
+    top: 0;
+    height: auto;
+  }
+  .toc{
+    /* モバイルでは目次が長いと困るので、ここだけスクロール許可したい場合は下のコメント解除 */
+    overflow: auto; max-height: 200px;
+  }
+}
