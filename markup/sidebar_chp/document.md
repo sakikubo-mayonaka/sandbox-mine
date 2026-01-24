@@ -96,8 +96,8 @@ npm -v
 
         // 3行目 footer
         <div class="sidebar__footer">--// padding, border, border-radius, background
-          <a href="#top" class="muted">
-        </div>-------------------------// footer 就労
+          <a href="${topHref}" class="muted">
+        </div>-------------------------// footer 終わり
 
        </div>
     </aside>
